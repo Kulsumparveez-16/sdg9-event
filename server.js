@@ -429,8 +429,8 @@ app.get('/admin-dashboard', (req, res) => {
                         <textarea id="description" rows="2" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="Brief summary of the innovation event..."></textarea>
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Date</label>
-                        <input type="date" id="date" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Date (Dropdown Calendar)</label>
+                        <input type="date" id="date" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition [color-scheme:dark]">
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Time</label>
