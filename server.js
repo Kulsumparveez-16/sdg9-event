@@ -48,7 +48,7 @@ db.serialize(() => {
     )`);
 });
 
-// ================= 1. AUTHENTICATION & LOGIN PAGE (EXACT REFERENCE MODAL) =================
+// ================= 1. AUTHENTICATION & LOGIN PAGE (MOUNTAINS + HANDS + ORIGINAL HEADINGS) =================
 app.get('/', (req, res) => {
     res.send(`
     <!DOCTYPE html>
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CodingNepal - SDG 9 Portal</title>
+        <title>SDG 9 - Event Portal</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>
@@ -71,26 +71,26 @@ app.get('/', (req, res) => {
     <body class="mountain-bg text-slate-100 min-h-screen flex flex-col justify-between p-6 relative overflow-x-hidden">
         
         <!-- Top Navbar -->
-        <header class="max-w-7xl w-full mx-auto flex justify-between items-center py-4 px-8 bg-slate-950/30 backdrop-blur-md rounded-2xl border border-white/10">
-            <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-full bg-cyan-400 flex items-center justify-center font-extrabold text-slate-950 text-sm shadow-lg">CN</div>
-                <span class="font-bold text-white text-lg tracking-tight">CodingNepal</span>
+        <header class="max-w-7xl w-full mx-auto flex justify-between items-center py-4 px-8 bg-slate-950/40 backdrop-blur-md rounded-2xl border border-white/10">
+            <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="font-extrabold text-white text-lg tracking-tight">SDG 9 Portal</span>
             </div>
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-200">
-                <span class="hover:text-cyan-400 cursor-pointer transition">Home</span>
-                <span class="hover:text-cyan-400 cursor-pointer transition">Portfolio</span>
-                <span class="hover:text-cyan-400 cursor-pointer transition">Courses</span>
-                <span class="hover:text-cyan-400 cursor-pointer transition">About us</span>
-                <span class="hover:text-cyan-400 cursor-pointer transition">Contact us</span>
+            <nav class="hidden md:flex items-center gap-8 text-xs font-bold text-slate-300">
+                <span class="hover:text-white cursor-pointer transition">Home</span>
+                <span class="hover:text-white cursor-pointer transition">Portfolio</span>
+                <span class="hover:text-white cursor-pointer transition">Courses</span>
+                <span class="hover:text-white cursor-pointer transition">About us</span>
+                <span class="hover:text-white cursor-pointer transition">Contact us</span>
             </nav>
-            <button onclick="switchTab('login')" class="bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-xs px-6 py-2.5 rounded-xl shadow-md transition">LOG IN</button>
+            <button onclick="switchTab('login')" class="bg-white text-slate-950 font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-lg hover:bg-slate-200 transition">LOG IN</button>
         </header>
 
-        <!-- Centered Modal Box -->
+        <!-- Centered Modal Box matching reference image -->
         <main class="flex-grow flex items-center justify-center p-4">
             <div class="max-w-4xl w-full bg-white text-slate-900 rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.8)] grid grid-cols-1 md:grid-cols-2 overflow-hidden relative">
                 
-                <!-- Left Side: Dark Welcome Panel with Laptop Image -->
+                <!-- Left Side: Welcome Panel with Laptop/Hands Image -->
                 <div class="relative bg-slate-950 p-10 flex flex-col justify-end text-white min-h-[380px]">
                     <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
@@ -100,7 +100,7 @@ app.get('/', (req, res) => {
                     </div>
                 </div>
 
-                <!-- Right Side: Interactive Forms (Login / Signup / Forgot) -->
+                <!-- Right Side: Original Forms & Headings -->
                 <div class="p-8 md:p-10 flex flex-col justify-center bg-white relative">
                     
                     <!-- Login Form -->
@@ -172,7 +172,7 @@ app.get('/', (req, res) => {
         </main>
 
         <footer class="text-center text-xs text-slate-300 py-2 font-medium">
-            © 2026 CodingNepal. All rights reserved.
+            © 2026 SDG 9 Innovation Portal. All rights reserved.
         </footer>
 
         <script>
@@ -303,7 +303,7 @@ app.get('/events', (req, res) => {
     <body class="gradient-bg text-slate-100 min-h-screen p-6 md:p-12">
         
         <div class="max-w-5xl mx-auto">
-            <!-- Hero Banner with Vibrant Gradient -->
+            <!-- Hero Banner -->
             <div class="relative bg-gradient-to-r from-purple-900/80 via-slate-900 to-emerald-900/80 border border-purple-500/30 p-8 md:p-10 rounded-[2.5rem] mb-10 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 overflow-hidden">
                 <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
                 <div>
