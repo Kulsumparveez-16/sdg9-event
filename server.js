@@ -56,89 +56,89 @@ app.get('/', (req, res) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SDG 9 Innovation Portal</title>
+        <title>SDG 9 Enterprise Innovation Portal</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
     </head>
-    <body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-        <!-- Ambient Glow FX -->
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/15 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <body class="bg-[#030712] text-slate-100 min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+        <!-- Ambient Cyber Glow -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none"></div>
 
-        <div class="max-w-md w-full bg-slate-950/70 backdrop-blur-2xl border border-slate-800/80 p-8 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.8)] relative z-10">
+        <div class="max-w-md w-full bg-slate-900/60 backdrop-blur-2xl border border-slate-800/80 p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative z-10">
             
             <!-- Branding Header -->
             <div class="text-center mb-8">
-                <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold px-3.5 py-1.5 rounded-full mb-4 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span>UN SDG 9 Portal</span>
+                <div class="inline-flex items-center gap-2.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-extrabold px-4 py-2 rounded-full mb-4 shadow-inner">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>SDG 9 Infrastructure & Innovation</span>
                 </div>
-                <h1 class="text-3xl font-extrabold text-white tracking-tight">Innovation Hub</h1>
-                <p class="text-xs text-slate-400 mt-1.5">Industry, Innovation, and Sustainable Infrastructure</p>
+                <h1 class="text-3xl font-extrabold text-white tracking-tight">Event Portal</h1>
+                <p class="text-xs text-slate-400 mt-1.5 font-medium">Secure Cloud Authentication Hub</p>
             </div>
 
             <!-- Mode Selector Tabs -->
-            <div id="tab-container" class="grid grid-cols-2 bg-slate-900/90 p-1.5 rounded-2xl mb-6 border border-slate-800">
-                <button onclick="switchTab('login')" id="login-tab" class="py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg transition-all">Sign In</button>
-                <button onclick="switchTab('register')" id="register-tab" class="py-2.5 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all">Register</button>
+            <div id="tab-container" class="grid grid-cols-2 bg-slate-950/80 p-1.5 rounded-2xl mb-6 border border-slate-800">
+                <button onclick="switchTab('login')" id="login-tab" class="py-3 text-xs font-extrabold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg transition-all duration-300">Sign In</button>
+                <button onclick="switchTab('register')" id="register-tab" class="py-3 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all duration-300">Register</button>
             </div>
 
             <!-- Login Form -->
             <form id="login-form" class="space-y-4">
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Email Address</label>
-                    <input type="email" id="login-email" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition" placeholder="name@example.com">
+                    <input type="email" id="login-email" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition" placeholder="name@example.com">
                 </div>
                 <div>
                     <div class="flex justify-between items-center mb-1.5">
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Password</label>
-                        <button type="button" onclick="switchTab('forgot')" class="text-xs text-emerald-400 hover:underline font-semibold">Forgot Password?</button>
+                        <button type="button" onclick="switchTab('forgot')" class="text-xs text-emerald-400 hover:underline font-bold">Forgot Password?</button>
                     </div>
-                    <input type="password" id="login-password" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition" placeholder="••••••••">
+                    <input type="password" id="login-password" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition" placeholder="••••••••">
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-xl shadow-emerald-600/20 mt-2">Sign In to Dashboard</button>
-                <p id="login-error" class="text-xs text-rose-400 text-center font-medium pt-2"></p>
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition-all duration-300 shadow-xl shadow-emerald-600/25 active:scale-[0.98] mt-2">Sign In to Dashboard</button>
+                <p id="login-error" class="text-xs text-rose-400 text-center font-bold pt-2"></p>
             </form>
 
             <!-- Registration Form -->
             <form id="register-form" class="space-y-4 hidden">
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Full Name</label>
-                    <input type="text" id="reg-name" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="Jane Doe">
+                    <input type="text" id="reg-name" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="Jane Doe">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Valid Email (Gmail, Yahoo, iCloud)</label>
-                    <input type="email" id="reg-email" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="jane@gmail.com">
+                    <input type="email" id="reg-email" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="jane@gmail.com">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Password</label>
-                    <input type="password" id="reg-password" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="Create secure password">
+                    <input type="password" id="reg-password" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="Create secure password">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Account Role</label>
-                    <select id="reg-role" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition">
-                        <option value="user">Attendee (Browse & Register)</option>
+                    <select id="reg-role" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition">
+                        <option value="user">Attendee (Browse & Register Events)</option>
                         <option value="admin">Administrator (Create & Manage Events)</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-xl shadow-blue-600/20 mt-2">Create Account</button>
-                <p id="reg-msg" class="text-xs text-center font-medium pt-2"></p>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition-all duration-300 shadow-xl shadow-blue-600/25 active:scale-[0.98] mt-2">Create Account</button>
+                <p id="reg-msg" class="text-xs text-center font-bold pt-2"></p>
             </form>
 
             <!-- Forgot Password Form -->
             <form id="forgot-form" class="space-y-4 hidden">
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Registered Email</label>
-                    <input type="email" id="forgot-email" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="name@example.com">
+                    <input type="email" id="forgot-email" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="name@example.com">
                 </div>
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">New Password</label>
-                    <input type="password" id="new-password" required class="w-full px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="Enter new password">
+                    <input type="password" id="new-password" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="Enter new password">
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-xl shadow-amber-600/20 mt-2">Reset Password</button>
-                <button type="button" onclick="switchTab('login')" class="w-full bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold p-3 rounded-2xl text-xs transition border border-slate-800">Back to Sign In</button>
-                <p id="forgot-msg" class="text-xs text-center font-medium pt-2"></p>
+                <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition-all duration-300 shadow-xl shadow-amber-600/25 active:scale-[0.98] mt-2">Reset Password</button>
+                <button type="button" onclick="switchTab('login')" class="w-full bg-slate-950 hover:bg-slate-800 text-slate-300 font-bold p-3 rounded-2xl text-xs transition border border-slate-800">Back to Sign In</button>
+                <p id="forgot-msg" class="text-xs text-center font-bold pt-2"></p>
             </form>
         </div>
 
@@ -153,15 +153,15 @@ app.get('/', (req, res) => {
 
                 if (mode === 'login') {
                     tabContainer.classList.remove('hidden');
-                    loginTab.className = "py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg transition-all";
-                    regTab.className = "py-2.5 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all";
+                    loginTab.className = "py-3 text-xs font-extrabold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg transition-all duration-300";
+                    regTab.className = "py-3 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all duration-300";
                     loginForm.classList.remove('hidden');
                     regForm.classList.add('hidden');
                     forgotForm.classList.add('hidden');
                 } else if (mode === 'register') {
                     tabContainer.classList.remove('hidden');
-                    regTab.className = "py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg transition-all";
-                    loginTab.className = "py-2.5 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all";
+                    regTab.className = "py-3 text-xs font-extrabold rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg transition-all duration-300";
+                    loginTab.className = "py-3 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all duration-300";
                     regForm.classList.remove('hidden');
                     loginForm.classList.add('hidden');
                     forgotForm.classList.add('hidden');
@@ -267,16 +267,16 @@ app.get('/events', (req, res) => {
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
     </head>
-    <body class="bg-slate-950 text-slate-100 min-h-screen p-6 md:p-12 relative overflow-x-hidden">
+    <body class="bg-[#030712] text-slate-100 min-h-screen p-6 md:p-12">
         
         <div class="max-w-5xl mx-auto">
             <!-- Gorgeous Hero Banner -->
-            <div class="relative bg-gradient-to-r from-slate-900 via-slate-900 to-emerald-950/40 border border-slate-800 p-8 rounded-[2.5rem] mb-10 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 overflow-hidden">
+            <div class="relative bg-gradient-to-r from-slate-900 via-slate-900 to-emerald-950/50 border border-slate-800 p-8 md:p-10 rounded-[2.5rem] mb-10 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 overflow-hidden">
                 <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
                 <div>
-                    <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full inline-block mb-3">🌱 Attendee Portal</span>
-                    <h1 class="text-3xl font-extrabold text-white tracking-tight">SDG 9 Innovation Events</h1>
-                    <p class="text-xs text-slate-400 mt-1">Logged in as: <span id="welcome-name" class="text-emerald-400 font-bold"></span></p>
+                    <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-extrabold px-4 py-2 rounded-full inline-block mb-3 shadow-sm">🌱 UN SDG 9 Attendee Hub</span>
+                    <h1 class="text-3xl font-extrabold text-white tracking-tight">Innovation Events Portal</h1>
+                    <p class="text-xs text-slate-400 mt-1.5 font-medium">Active Session: <span id="welcome-name" class="text-emerald-400 font-bold"></span></p>
                 </div>
                 <div class="flex items-center gap-3 relative z-10">
                     <button onclick="deleteAccount()" class="bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 text-xs px-4 py-3 rounded-2xl font-bold transition shadow-sm">Delete Account</button>
@@ -286,7 +286,7 @@ app.get('/events', (req, res) => {
 
             <!-- Events Grid -->
             <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="col-span-2 text-center py-16 text-slate-500 font-medium">Loading available innovation events...</div>
+                <div class="col-span-2 text-center py-16 text-slate-500 font-medium text-sm">Loading available innovation events...</div>
             </div>
         </div>
 
@@ -325,7 +325,7 @@ app.get('/events', (req, res) => {
                 const grid = document.getElementById('events-grid');
                 
                 if (events.length === 0) {
-                    grid.innerHTML = \`<div class="col-span-2 bg-slate-900/60 border border-slate-800 p-16 rounded-[2.5rem] text-center text-slate-400 font-medium">No innovation events published yet. Check back soon!</div>\`;
+                    grid.innerHTML = \`<div class="col-span-2 bg-slate-900/60 border border-slate-800 p-16 rounded-[2.5rem] text-center text-slate-400 font-semibold text-sm">No innovation events published yet. Check back soon!</div>\`;
                     return;
                 }
 
@@ -341,17 +341,17 @@ app.get('/events', (req, res) => {
                                     </span>
                                 </div>
                                 <h3 class="font-extrabold text-xl text-white group-hover:text-emerald-400 transition tracking-tight">\${ev.title}</h3>
-                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">\${ev.description}</p>
-                                <div class="flex gap-4 mt-5 text-xs text-slate-300 font-semibold bg-slate-950/60 p-3 rounded-2xl border border-slate-800/60">
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed font-medium">\${ev.description}</p>
+                                <div class="flex gap-4 mt-5 text-xs text-slate-300 font-bold bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800/80">
                                     <span>📅 \${ev.date}</span>
                                     <span>⏰ \${ev.time}</span>
                                 </div>
                             </div>
                             <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center">
-                                <span class="text-[11px] text-slate-500">Attendee: <b class="text-slate-300">\${userName}</b></span>
+                                <span class="text-[11px] text-slate-500 font-medium">Attendee: <b class="text-slate-300">\${userName}</b></span>
                                 \${isFull ? 
                                     '<span class="text-xs font-extrabold text-rose-400 uppercase tracking-wider">Closed</span>' :
-                                    \`<button onclick="registerEvent(\${ev.id})" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs px-5 py-3 rounded-2xl font-extrabold transition shadow-lg shadow-emerald-600/20 active:scale-95">Register Now</button>\`
+                                    \`<button onclick="registerEvent(\${ev.id})" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs px-5 py-3 rounded-2xl font-extrabold transition-all shadow-lg shadow-emerald-600/20 active:scale-95">Register Now</button>\`
                                 }
                             </div>
                         </div>
@@ -394,13 +394,13 @@ app.get('/admin-dashboard', (req, res) => {
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
     </head>
-    <body class="bg-slate-950 text-slate-100 min-h-screen p-6 md:p-12">
+    <body class="bg-[#030712] text-slate-100 min-h-screen p-6 md:p-12">
         <div class="max-w-5xl mx-auto">
             <!-- Header -->
-            <div class="relative bg-gradient-to-r from-slate-900 via-slate-900 to-emerald-950/40 border border-slate-800 p-8 rounded-[2.5rem] mb-10 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 overflow-hidden">
+            <div class="relative bg-gradient-to-r from-slate-900 via-slate-900 to-emerald-950/50 border border-slate-800 p-8 md:p-10 rounded-[2.5rem] mb-10 shadow-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 overflow-hidden">
                 <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
                 <div>
-                    <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-extrabold px-3.5 py-1.5 rounded-full inline-block mb-3">🛡️ Admin Control Panel</span>
+                    <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-extrabold px-4 py-2 rounded-full inline-block mb-3 shadow-sm">🛡️ Admin Control Panel</span>
                     <h1 class="text-3xl font-extrabold text-white tracking-tight">Event Management Hub</h1>
                 </div>
                 <div class="flex items-center gap-3 relative z-10">
@@ -410,38 +410,38 @@ app.get('/admin-dashboard', (req, res) => {
             </div>
 
             <!-- Create Event Form -->
-            <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 p-8 rounded-[2.5rem] mb-10 shadow-2xl">
-                <h2 class="text-lg font-extrabold mb-6 text-emerald-400 flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-sm">✨</span> 
+            <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 p-8 md:p-10 rounded-[2.5rem] mb-10 shadow-2xl">
+                <h2 class="text-lg font-extrabold mb-6 text-emerald-400 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-sm shadow-inner">✨</span> 
                     Publish New SDG 9 Event
                 </h2>
                 <form id="create-event-form" class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Event Title</label>
-                        <input type="text" id="title" required class="w-full px-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="Green Tech Expo">
+                        <input type="text" id="title" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="Green Tech Expo">
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Organisation Name</label>
-                        <input type="text" id="organisation" required class="w-full px-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="EcoInnovate Labs">
+                        <input type="text" id="organisation" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="EcoInnovate Labs">
                     </div>
                     <div class="md:col-span-2">
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Description</label>
-                        <textarea id="description" rows="2" required class="w-full px-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="Brief summary of the innovation event..."></textarea>
+                        <textarea id="description" rows="2" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="Brief summary of the innovation event..."></textarea>
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Date</label>
-                        <input type="date" id="date" required class="w-full px-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition">
+                        <input type="date" id="date" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition">
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Time</label>
-                        <input type="time" id="time" required class="w-full px-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition">
+                        <input type="time" id="time" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition">
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Maximum Capacity</label>
-                        <input type="number" id="capacity" min="1" required class="w-full px-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="50">
+                        <input type="number" id="capacity" min="1" required class="w-full px-4 py-3.5 bg-slate-950/80 border border-slate-800 rounded-2xl text-sm outline-none focus:border-emerald-500 transition" placeholder="50">
                     </div>
                     <div class="flex items-end">
-                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-lg shadow-emerald-600/20">Publish Event</button>
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition-all shadow-lg shadow-emerald-600/20 active:scale-[0.98]">Publish Event</button>
                     </div>
                 </form>
                 <p id="event-msg" class="text-center text-xs font-bold mt-4"></p>
@@ -449,25 +449,25 @@ app.get('/admin-dashboard', (req, res) => {
 
             <!-- Active Events List -->
             <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 rounded-[2.5rem] overflow-hidden shadow-2xl mb-10">
-                <div class="p-6 border-b border-slate-800 font-extrabold text-white text-base">Active Events Management</div>
-                <div id="admin-events-list" class="p-6 grid gap-4">
-                    <p class="text-slate-500 text-xs text-center py-4">Loading active events...</p>
+                <div class="p-6 md:p-8 border-b border-slate-800 font-extrabold text-white text-base">Active Events Management</div>
+                <div id="admin-events-list" class="p-6 md:p-8 grid gap-4">
+                    <p class="text-slate-500 text-xs text-center py-4 font-medium">Loading active events...</p>
                 </div>
             </div>
 
             <!-- Registrations Table -->
             <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                <div class="p-6 border-b border-slate-800 font-extrabold text-white text-base">Registered Attendees List</div>
+                <div class="p-6 md:p-8 border-b border-slate-800 font-extrabold text-white text-base">Registered Attendees List</div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-slate-950 text-[11px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
-                                <th class="p-4">Reg ID</th>
-                                <th class="p-4">Attendee Name</th>
-                                <th class="p-4">Email</th>
-                                <th class="p-4">Event Title</th>
-                                <th class="p-4">Organisation</th>
-                                <th class="p-4">Timestamp</th>
+                                <th class="p-4 md:p-5">Reg ID</th>
+                                <th class="p-4 md:p-5">Attendee Name</th>
+                                <th class="p-4 md:p-5">Email</th>
+                                <th class="p-4 md:p-5">Event Title</th>
+                                <th class="p-4 md:p-5">Organisation</th>
+                                <th class="p-4 md:p-5">Timestamp</th>
                             </tr>
                         </thead>
                         <tbody id="reg-table-body" class="text-xs divide-y divide-slate-800/60">
@@ -551,7 +551,7 @@ app.get('/admin-dashboard', (req, res) => {
                         <div>
                             <div class="flex items-center gap-2.5">
                                 <span class="font-bold text-white text-sm">\${ev.title}</span>
-                                <span class="text-[10px] bg-slate-900 text-emerald-400 px-2.5 py-1 rounded-full border border-slate-800 font-semibold">🏢 \${ev.organisation}</span>
+                                <span class="text-[10px] bg-slate-900 text-emerald-400 px-2.5 py-1 rounded-full border border-slate-800 font-bold">🏢 \${ev.organisation}</span>
                             </div>
                             <p class="text-[11px] text-slate-400 mt-1.5 font-medium">📅 \${ev.date} | ⏰ \${ev.time} | 👥 Registrations: <b class="text-slate-200">\${ev.registered_count}/\${ev.capacity}</b></p>
                         </div>
@@ -586,12 +586,12 @@ app.get('/admin-dashboard', (req, res) => {
 
                 tbody.innerHTML = data.map(reg => \`
                     <tr class="hover:bg-slate-950/50 transition">
-                        <td class="p-4 font-mono text-emerald-400 font-bold">#\${reg.id}</td>
-                        <td class="p-4 font-bold text-white">\${reg.name}</td>
-                        <td class="p-4 text-slate-300">\${reg.email}</td>
-                        <td class="p-4 font-semibold text-slate-200">\${reg.event_title}</td>
-                        <td class="p-4 text-emerald-400 font-medium">\${reg.organisation}</td>
-                        <td class="p-4 text-slate-500 text-[11px]">\${reg.registered_at}</td>
+                        <td class="p-4 md:p-5 font-mono text-emerald-400 font-bold">#\${reg.id}</td>
+                        <td class="p-4 md:p-5 font-bold text-white">\${reg.name}</td>
+                        <td class="p-4 md:p-5 text-slate-300">\${reg.email}</td>
+                        <td class="p-4 md:p-5 font-semibold text-slate-200">\${reg.event_title}</td>
+                        <td class="p-4 md:p-5 text-emerald-400 font-medium">\${reg.organisation}</td>
+                        <td class="p-4 md:p-5 text-slate-500 text-[11px]">\${reg.registered_at}</td>
                     </tr>
                 \`).join('');
             }
