@@ -48,7 +48,7 @@ db.serialize(() => {
     )`);
 });
 
-// ================= 1. AUTHENTICATION & LOGIN PAGE (MOUNTAINS + HANDS + ORIGINAL HEADINGS) =================
+// ================= 1. AUTHENTICATION & LOGIN PAGE (ORIGINAL LAYOUT + MOUNTAINS & LAPTOP/HANDS) =================
 app.get('/', (req, res) => {
     res.send(`
     <!DOCTYPE html>
@@ -68,131 +68,125 @@ app.get('/', (req, res) => {
             }
         </style>
     </head>
-    <body class="mountain-bg text-slate-100 min-h-screen flex flex-col justify-between p-6 relative overflow-x-hidden">
+    <body class="mountain-bg text-slate-100 min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
         
-        <!-- Top Navbar -->
-        <header class="max-w-7xl w-full mx-auto flex justify-between items-center py-4 px-8 bg-slate-950/40 backdrop-blur-md rounded-2xl border border-white/10">
-            <div class="flex items-center gap-3">
-                <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
-                <span class="font-extrabold text-white text-lg tracking-tight">SDG 9 Portal</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-8 text-xs font-bold text-slate-300">
-                <span class="hover:text-white cursor-pointer transition">Home</span>
-                <span class="hover:text-white cursor-pointer transition">Portfolio</span>
-                <span class="hover:text-white cursor-pointer transition">Courses</span>
-                <span class="hover:text-white cursor-pointer transition">About us</span>
-                <span class="hover:text-white cursor-pointer transition">Contact us</span>
-            </nav>
-            <button onclick="switchTab('login')" class="bg-white text-slate-950 font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-lg hover:bg-slate-200 transition">LOG IN</button>
-        </header>
+        <!-- Ambient Glow -->
+        <div class="absolute top-10 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <!-- Centered Modal Box matching reference image -->
-        <main class="flex-grow flex items-center justify-center p-4">
-            <div class="max-w-4xl w-full bg-white text-slate-900 rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.8)] grid grid-cols-1 md:grid-cols-2 overflow-hidden relative">
-                
-                <!-- Left Side: Welcome Panel with Laptop/Hands Image -->
-                <div class="relative bg-slate-950 p-10 flex flex-col justify-end text-white min-h-[380px]">
-                    <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-                    <div class="relative z-10">
-                        <h2 class="text-3xl font-extrabold tracking-tight mb-2">Welcome Back</h2>
-                        <p class="text-xs text-slate-300 leading-relaxed font-medium">Please log in using your personal information to stay connected with us.</p>
+        <div class="max-w-4xl w-full bg-slate-900/90 backdrop-blur-2xl text-slate-100 rounded-[2.5rem] shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/10 grid grid-cols-1 md:grid-cols-2 overflow-hidden relative z-10">
+            
+            <!-- Left Side: Laptop/Hands & Welcome Panel -->
+            <div class="relative bg-slate-950 p-10 flex flex-col justify-end text-white min-h-[380px]">
+                <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full mb-3">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>SDG 9 Event System</span>
                     </div>
+                    <h2 class="text-3xl font-extrabold tracking-tight mb-2">Welcome Back</h2>
+                    <p class="text-xs text-slate-300 leading-relaxed font-medium">Please sign in with your credentials to manage and register for innovation events.</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Original Forms & Headings -->
+            <div class="p-8 md:p-10 flex flex-col justify-center bg-slate-900/40 relative">
+                
+                <!-- Mode Selector Tabs -->
+                <div id="tab-container" class="grid grid-cols-2 bg-slate-950/80 p-1.5 rounded-2xl mb-6 border border-white/5">
+                    <button onclick="switchTab('login')" id="login-tab" class="py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg transition-all">Sign In</button>
+                    <button onclick="switchTab('register')" id="register-tab" class="py-2.5 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all">Register</button>
                 </div>
 
-                <!-- Right Side: Original Forms & Headings -->
-                <div class="p-8 md:p-10 flex flex-col justify-center bg-white relative">
-                    
-                    <!-- Login Form -->
-                    <form id="login-form" class="space-y-4">
-                        <div class="text-center mb-6">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-wider">LOGIN</h3>
+                <!-- Login Form -->
+                <form id="login-form" class="space-y-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Email Address</label>
+                        <input type="email" id="login-email" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none focus:border-emerald-500 transition placeholder:text-slate-600" placeholder="name@example.com">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Password</label>
+                            <button type="button" onclick="switchTab('forgot')" class="text-xs text-emerald-400 hover:text-emerald-300 font-bold transition">Forgot Password?</button>
                         </div>
-                        <div>
-                            <input type="email" id="login-email" required class="w-full px-4.5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="Email">
-                        </div>
-                        <div>
-                            <input type="password" id="login-password" required class="w-full px-4.5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="Password">
-                        </div>
-                        <div class="flex justify-between items-center text-xs">
-                            <label class="flex items-center gap-2 text-slate-600 font-medium cursor-pointer">
-                                <input type="checkbox" class="rounded border-slate-300 text-cyan-600 focus:ring-cyan-500"> Remember me
-                            </label>
-                            <button type="button" onclick="switchTab('forgot')" class="text-cyan-600 hover:underline font-bold">Forgot password?</button>
-                        </div>
-                        <button type="submit" class="w-full bg-[#00bcd4] hover:bg-[#00acc1] text-white font-bold p-3.5 rounded-xl text-sm transition shadow-md shadow-cyan-500/25 active:scale-[0.98]">Log In</button>
-                        <p class="text-xs text-center text-slate-500 font-medium pt-2">Don't have an account? <button type="button" onclick="switchTab('register')" class="text-cyan-600 font-bold hover:underline">Signup</button></p>
-                        <p id="login-error" class="text-xs text-rose-500 text-center font-bold pt-1"></p>
-                    </form>
+                        <input type="password" id="login-password" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none focus:border-emerald-500 transition placeholder:text-slate-600" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-lg shadow-emerald-600/30 active:scale-[0.98] mt-2">Login</button>
+                    <p id="login-error" class="text-xs text-rose-400 text-center font-bold pt-2"></p>
+                </form>
 
-                    <!-- Registration Form -->
-                    <form id="register-form" class="space-y-3.5 hidden">
-                        <div class="text-center mb-4">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-wider">SIGN UP</h3>
-                        </div>
-                        <div>
-                            <input type="text" id="reg-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="Full Name">
-                        </div>
-                        <div>
-                            <input type="email" id="reg-email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="Email (Gmail, Yahoo, iCloud)">
-                        </div>
-                        <div>
-                            <input type="password" id="reg-password" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="Password">
-                        </div>
-                        <div>
-                            <select id="reg-role" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition">
-                                <option value="user">Attendee (Browse & Register)</option>
-                                <option value="admin">Administrator (Manage Events)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-[#00bcd4] hover:bg-[#00acc1] text-white font-bold p-3.5 rounded-xl text-sm transition shadow-md shadow-cyan-500/25 active:scale-[0.98]">Create Account</button>
-                        <p class="text-xs text-center text-slate-500 font-medium pt-1">Already have an account? <button type="button" onclick="switchTab('login')" class="text-cyan-600 font-bold hover:underline">Log In</button></p>
-                        <p id="reg-msg" class="text-xs text-center font-bold pt-1"></p>
-                    </form>
+                <!-- Registration Form -->
+                <form id="register-form" class="space-y-4 hidden">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Full Name</label>
+                        <input type="text" id="reg-name" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none focus:border-blue-500 transition placeholder:text-slate-600" placeholder="Jane Doe">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Valid Email (Gmail, Yahoo, iCloud)</label>
+                        <input type="email" id="reg-email" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none focus:border-blue-500 transition placeholder:text-slate-600" placeholder="jane@gmail.com">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Password</label>
+                        <input type="password" id="reg-password" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none focus:border-blue-500 transition placeholder:text-slate-600" placeholder="Create secure password">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Account Role</label>
+                        <select id="reg-role" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none transition">
+                            <option value="user" class="bg-slate-900">Attendee (Browse & Register)</option>
+                            <option value="admin" class="bg-slate-900">Administrator (Manage Events)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-lg shadow-blue-600/30 active:scale-[0.98] mt-2">Sign Up</button>
+                    <p id="reg-msg" class="text-xs text-center font-bold pt-2"></p>
+                </form>
 
-                    <!-- Forgot Password Form -->
-                    <form id="forgot-form" class="space-y-4 hidden">
-                        <div class="text-center mb-4">
-                            <h3 class="text-xl font-black text-slate-900 tracking-wider">RESET PASSWORD</h3>
-                        </div>
-                        <div>
-                            <input type="email" id="forgot-email" required class="w-full px-4.5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="Registered Email">
-                        </div>
-                        <div>
-                            <input type="password" id="new-password" required class="w-full px-4.5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:border-cyan-500 outline-none transition placeholder:text-slate-400" placeholder="New Password">
-                        </div>
-                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold p-3.5 rounded-xl text-sm transition shadow-md active:scale-[0.98]">Reset Password</button>
-                        <button type="button" onclick="switchTab('login')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold p-3 rounded-xl text-xs transition">Back to Log In</button>
-                        <p id="forgot-msg" class="text-xs text-center font-bold pt-1"></p>
-                    </form>
-
-                </div>
+                <!-- Forgot Password Form -->
+                <form id="forgot-form" class="space-y-4 hidden">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Registered Email</label>
+                        <input type="email" id="forgot-email" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none transition placeholder:text-slate-600" placeholder="name@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">New Password</label>
+                        <input type="password" id="new-password" required class="w-full px-4.5 py-3.5 bg-slate-950/80 border border-white/10 rounded-2xl text-sm text-white outline-none transition placeholder:text-slate-600" placeholder="Enter new password">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-extrabold p-3.5 rounded-2xl text-sm transition shadow-lg active:scale-[0.98] mt-2">Reset Password</button>
+                    <button type="button" onclick="switchTab('login')" class="w-full bg-slate-950 hover:bg-slate-900 text-slate-300 font-bold p-3 rounded-2xl text-xs transition border border-white/5">Back to Login</button>
+                    <p id="forgot-msg" class="text-xs text-center font-bold pt-2"></p>
+                </form>
 
             </div>
-        </main>
 
-        <footer class="text-center text-xs text-slate-300 py-2 font-medium">
-            © 2026 SDG 9 Innovation Portal. All rights reserved.
-        </footer>
+        </div>
 
         <script>
             function switchTab(mode) {
+                const loginTab = document.getElementById('login-tab');
+                const regTab = document.getElementById('register-tab');
                 const loginForm = document.getElementById('login-form');
                 const regForm = document.getElementById('register-form');
                 const forgotForm = document.getElementById('forgot-form');
+                const tabContainer = document.getElementById('tab-container');
 
                 if (mode === 'login') {
+                    tabContainer.classList.remove('hidden');
+                    loginTab.className = "py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg transition-all";
+                    regTab.className = "py-2.5 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all";
                     loginForm.classList.remove('hidden');
                     regForm.classList.add('hidden');
                     forgotForm.classList.add('hidden');
                 } else if (mode === 'register') {
+                    tabContainer.classList.remove('hidden');
+                    regTab.className = "py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg transition-all";
+                    loginTab.className = "py-2.5 text-xs font-bold rounded-xl text-slate-400 hover:text-white transition-all";
                     regForm.classList.remove('hidden');
                     loginForm.classList.add('hidden');
                     forgotForm.classList.add('hidden');
                 } else if (mode === 'forgot') {
-                    forgotForm.classList.remove('hidden');
+                    tabContainer.classList.add('hidden');
                     loginForm.classList.add('hidden');
                     regForm.classList.add('hidden');
+                    forgotForm.classList.remove('hidden');
                 }
             }
 
@@ -212,11 +206,11 @@ app.get('/', (req, res) => {
                 const data = await res.json();
                 const msg = document.getElementById('reg-msg');
                 if (res.ok) {
-                    msg.className = "text-xs text-center font-bold text-emerald-600";
+                    msg.className = "text-xs text-center font-bold text-emerald-400 animate-pulse";
                     msg.textContent = data.message;
                     setTimeout(() => switchTab('login'), 1500);
                 } else {
-                    msg.className = "text-xs text-center font-bold text-rose-500";
+                    msg.className = "text-xs text-center font-bold text-rose-400";
                     msg.textContent = data.error;
                 }
             });
@@ -263,11 +257,11 @@ app.get('/', (req, res) => {
                 const data = await res.json();
                 const msg = document.getElementById('forgot-msg');
                 if (res.ok) {
-                    msg.className = "text-xs text-center font-bold text-emerald-600";
+                    msg.className = "text-xs text-center font-bold text-emerald-400";
                     msg.textContent = data.message;
                     setTimeout(() => switchTab('login'), 1500);
                 } else {
-                    msg.className = "text-xs text-center font-bold text-rose-500";
+                    msg.className = "text-xs text-center font-bold text-rose-400";
                     msg.textContent = data.error;
                 }
             });
